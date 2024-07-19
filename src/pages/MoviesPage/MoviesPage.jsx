@@ -57,24 +57,7 @@ const MoviesPage = () => {
       {error ? (
         <div className="globalLoad">Not Found</div>
       ) : (
-        movies.length > 0 && (
-          <MovieList>
-            {movies.map((movie) => {
-              if (movie.poster_path == null) {
-                return;
-              }
-              return (
-                <Movie
-                  key={movie.id}
-                  release_date={movie.release_date}
-                  poster_path={movie.poster_path}
-                  original_title={movie.original_title}
-                  movieId={movie.id}
-                />
-              );
-            })}
-          </MovieList>
-        )
+        movies.length > 0 && <MovieList movies={movies} />
       )}
     </div>
   );

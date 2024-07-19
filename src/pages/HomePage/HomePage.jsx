@@ -27,22 +27,7 @@ const HomePage = () => {
   return (
     <div className={s.wrapper}>
       {load && <div className="globalLoad">Loading...</div>}
-      {!load &&
-        (error ? (
-          <NotFoundPage />
-        ) : (
-          <MovieList>
-            {movies.map((movie) => (
-              <Movie
-                key={movie.id}
-                release_date={movie.release_date}
-                poster_path={movie.poster_path}
-                original_title={movie.original_title}
-                movieId={movie.id}
-              />
-            ))}
-          </MovieList>
-        ))}
+      {!load && (error ? <NotFoundPage /> : <MovieList movies={movies} />)}
     </div>
   );
 };

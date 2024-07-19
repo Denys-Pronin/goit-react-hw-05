@@ -4,4 +4,32 @@
   flex-wrap: wrap;
   justify-content: center;
   list-style: none;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.link {
+  width: calc((100% - 60px) / 4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 1280px) {
+  .link {
+    width: calc((100% - 60px) / 3);
+  }
+
+  .list {
+    max-width: 768px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .link {
+    width: 90%;
+  }
+  .list {
+    max-width: 320px;
+  }
 }
