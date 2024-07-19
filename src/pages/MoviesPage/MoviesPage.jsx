@@ -11,6 +11,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
   const [load, setLoad] = useState(false);
+
   useEffect(() => {
     const query = params.get("query") ?? "";
     if (query == 0) {

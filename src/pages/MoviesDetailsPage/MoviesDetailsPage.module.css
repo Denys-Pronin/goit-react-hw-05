@@ -122,4 +122,7 @@
     left: 35px;
     bottom: 35px;
   }
+  .btn {
+    transform: translateY(0);
+  }
 }

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { NavLink, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMovieById, getMovieVideos } from "../../movie-api";
 import s from "./MoviesDetailsPage.module.css";
 import clsx from "clsx";
@@ -45,7 +45,8 @@ const MoviesDetailsPage = () => {
   const makeLinkClass = ({ isActive }) => {
     return clsx(s.link, isActive && s.isActive);
   };
-
+  const location = useLocation();
+  const backLinkRef = useRef(location.state ?? "/movies");
   return (
     <div>
       {load && <div className="globalLoad">Loading...</div>}
@@ -54,7 +55,7 @@ const MoviesDetailsPage = () => {
           <NotFoundPage />
         ) : (
           <div className={s.wrapper}>
-            <NavLink to="/" className={s.btn}>
+            <NavLink to={backLinkRef.current} className={s.btn}>
               Back
             </NavLink>
             <div className={s.imgWrapper}>
