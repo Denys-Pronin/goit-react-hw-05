@@ -1,0 +1,35 @@
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.form {
+  width: 80%;
+  position: relative;
+  margin: 0 auto 48px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 16px;
+  border: none;
+  background-color: #1f1f1f;
+  color: #eaeaea;
+  &:focus {
+    outline: 2px solid grey;
+  }
+}
+
+.button {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 100%;
+  border-radius: 16px;
+  padding: 0 20px;
+  transform: translateY(-50%);
+  background-color: #eaeaea;
+  border: none;
+}

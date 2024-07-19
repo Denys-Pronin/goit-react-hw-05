@@ -1,0 +1,28 @@
+.list {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  max-width: 1280px;
+  list-style: none;
+  padding: 20px 0;
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #eaeaea;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .list {
+    max-width: 640px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .list {
+    max-width: 320px;
+    flex-direction: column;
+  }
+}
