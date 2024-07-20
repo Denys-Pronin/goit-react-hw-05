@@ -14,7 +14,7 @@ const MoviesPage = () => {
 
   useEffect(() => {
     const query = params.get("query") ?? "";
-    if (query == 0) {
+    if (query == "") {
       return;
     }
     const fetchFilterMovie = async () => {
