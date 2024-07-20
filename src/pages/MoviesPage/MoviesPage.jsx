@@ -4,7 +4,6 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { getFilerMovies } from "../../movie-api";
 import MovieList from "../../components/MovieList/MovieList";
-import Movie from "../../components/Movie/Movie";
 
 const MoviesPage = () => {
   const [params, setParams] = useSearchParams();
@@ -14,7 +13,7 @@ const MoviesPage = () => {
 
   useEffect(() => {
     const query = params.get("query") ?? "";
-    if (query == "") {
+    if (!query) {
       return;
     }
     const fetchFilterMovie = async () => {
@@ -39,8 +38,7 @@ const MoviesPage = () => {
     setMovies([]);
     setError(false);
     e.preventDefault();
-    params.set("query", query);
-    setParams(params);
+    setParams({ query: query });
   };
   return (
     <div className={s.wrapper}>
